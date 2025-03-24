@@ -1,4 +1,3 @@
-
 import type { FilterValueType, Task } from "./App";
 import { Button } from "./Button";
 
@@ -6,15 +5,15 @@ type Props = {
   title: string;
   tasks: Task[];
   removeTask: (taskId: number) => void;
- changeFilter: (value: FilterValueType) => void;
+  changeFilter: (value: FilterValueType) => void;
 };
 
 export const TodolistItem = ({
   title,
   tasks,
   removeTask,
-changeFilter}: 
-Props) => {
+  changeFilter,
+}: Props) => {
   /* const [valueD, setValueD] = useState("All");
 
   const durshlagFoo = () => {
@@ -62,10 +61,14 @@ Props) => {
           })}
         </ul>
       )}
+      <button onClick={() => changeFilter("DELETE ALL TASKS")}>
+        DELETE ALL TASKS
+      </button>
       <div>
         <button onClick={() => changeFilter("All")}>All</button>
         <button onClick={() => changeFilter("Active")}>Active</button>
         <button onClick={() => changeFilter("Completed")}>Completed</button>
+        <button onClick={() => changeFilter("First 3 tasks")}>First 3 tasks</button>
         {/*       <Button title={"All"} />
         <Button title={"Active"} />
         <Button title={"Completed"} /> */}

@@ -8,7 +8,12 @@ export type Task = {
   isDone: boolean;
 };
 
-export type FilterValueType = "All" | "Active" | "Completed";
+export type FilterValueType =
+  | "All"
+  | "Active"
+  | "Completed"
+  | "DELETE ALL TASKS"
+  | "First 3 tasks";
 
 export const App = () => {
   let [tasks, setTasks] = useState([
@@ -34,6 +39,10 @@ export const App = () => {
         return (durshlag = tasks.filter((task) => task.isDone === false));
       case "Completed":
         return (durshlag = tasks.filter((task) => task.isDone === true));
+      case "DELETE ALL TASKS":
+        return (durshlag = []);
+      case "First 3 tasks":
+        return (durshlag = tasks.slice(0, 3));
     }
     return durshlag;
   };
